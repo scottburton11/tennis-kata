@@ -20,12 +20,33 @@ Game.prototype.ready = function() {
 		false;
 }
 
-Game.prototype.scorePoint = function(player) {
+Game.prototype.scorePoint = function(player, points) {
+	if(points)
+		this.increaseScore(player, points);
+	else
+		this.increaseScore(player, 1);
+}
+
+Game.prototype.increaseScore = function(player, points) {
 	if(player == 0) {
-		this.player1_score = 15;
+		for(i=0; i<points; i++) {
+			if(this.player1_score == 0)
+				this.player1_score = 15;
+			if(this.player1_score == 15)
+				this.player1_score = 30;
+			if(this.player1_score == 30)
+				this.player1_score = 40;
+		}
 	}
-	else if(player == 1) {
-		this.player2_score = 15;
+	if(player == 1) {
+		for(i=0; i<points; i++) {
+			if(this.player2_score == 0)
+				this.player2_score = 15;
+			if(this.player2_score == 15)
+				this.player2_score = 30;
+			if(this.player2_score == 30)
+				this.player2_score = 40;
+		}
 	}
 }
 
