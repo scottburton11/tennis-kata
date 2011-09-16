@@ -24,6 +24,19 @@ describe("A game of Tennis", function(){
     it("player2's score should start at 0", function(){
       expect(game.player2_score).toEqual(0);
     });
+
+    it("scoring a point for player1 increments their score", function(){
+      game.scorePoint(0);
+      expect(game.player1_score).toEqual(15);
+      expect(game.player2_score).toEqual(0);
+    });
+
+    it("scoring a point for player2 increments their score", function(){
+      game.scorePoint(1);
+      expect(game.player1_score).toEqual(0);
+      expect(game.player2_score).toEqual(15);
+    });
+
   });
 
   describe("with less than two players", function(){
