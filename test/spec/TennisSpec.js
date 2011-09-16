@@ -16,6 +16,14 @@ describe("A game of Tennis", function(){
     it("should be ready to play", function(){
       expect(game.ready).toBeTruthy();
     });
+
+    it("player1's score should start at 0", function(){
+      expect(game.player1_score).toEqual(0);
+    });
+
+    it("player2's score should start at 0", function(){
+      expect(game.player2_score).toEqual(0);
+    });
   });
 
   describe("with less than two players", function(){
@@ -27,4 +35,5 @@ describe("A game of Tennis", function(){
       expect(game.ready).toBeFalsy();
     });
   });
+
 });
