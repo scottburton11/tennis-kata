@@ -45,7 +45,7 @@ describe("A game of Tennis", function(){
     });
 
     it("should not be ready to play", function(){
-      expect(game.ready).toBeFalsy();
+      expect(game.ready()).toBeFalsy();
     });
   });
 
