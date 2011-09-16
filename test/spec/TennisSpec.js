@@ -37,6 +37,20 @@ describe("A game of Tennis", function(){
       expect(game.player2_score).toEqual(15);
     });
 
+    describe("scoring several points", function(){
+      beforeEach(function(){
+        game.scorePoint(0, 3);
+        game.scorePoint(1, 2);
+      });
+
+      it("player1's score should be 40", function(){
+        expect(game.player1_score).toEqual(40);
+      });
+
+      it("player2's score should be 30", function(){
+        expect(game.player2_score).toEqual(30);
+      });
+    });
   });
 
   describe("with less than two players", function(){
