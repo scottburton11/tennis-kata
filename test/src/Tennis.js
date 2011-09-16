@@ -10,3 +10,6 @@ function Game(player1, player2) {
 		this.ready = false;
 	}
 }
+
+function Player() {
+}
